@@ -1,0 +1,67 @@
+<h1>Test Angular</h1>
+
+<app-header [message]="parentMessage"></app-header>
+<app-button (counterEvent)="counterIncrement()"[name]="parentIncrease"></app-button>
+<app-button (counterEvent)="counterDecrement()"[name]="parentDecrease"></app-button>
+<app-button (counterEvent)="resetCount()"[name]="parentReset"></app-button>
+<p>{{count}}</p>
+
+
+<p>List</p>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
+<app-add-new-item (newItemEvent)="addItemInParent($event)" (deleteItemEvent)="deleteItemInParent()"></app-add-new-item>
+
+<h2 id="two-way">Two-way Binding</h2>
+<div id="two-way-1">
+  <p>{{message}}</p>
+  <label>Masukkan Pesan: <input [(ngModel)]="message"></label>
+</div>
+
+<app-paragraph [message]="'You can\'t see me'" [isShown]="false"></app-paragraph>
+
+<!-- <div *ngFor="let message of messages">
+  <app-paragraph [message]="message"></app-paragraph>
+</div> -->
+
+<!-- <table border="1">
+  <tr *ngFor="let message of messages; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{message}}</td>
+  </tr>
+</table> -->
+<!-- 
+<table border="1">
+  <ng-template ngFor let-message [ngForOf]="messages" let-i="index">
+    <tr *ngIf="i == 2">
+      <td>{{i + 1}}</td>
+      <td>{{message}}</td>
+    </tr>
+  </ng-template>
+</table> -->
+
+<!-- <ul *ngFor ="let person of people">
+    <li *ngIf="person.country === 'USA'" class="text-red">
+      {{person.name}} - {{person.age}} - {{person.country}}
+    </li>
+    <li *ngIf="person.country === 'UK'" class="text-green">
+      {{person.name}} - {{person.age}} - {{person.country}}
+    </li>
+    <li *ngIf="person.country === 'HK'" class="text-blue">
+      {{person.name}} - {{person.age}} - {{person.country}}
+    </li>
+    <li *ngIf="person.country === 'HK' && person.country === 'UK' && person.country === 'USA'" >
+      {{person.name}} - {{person.age}} - {{person.country}}
+    </li>
+</ul> -->
+
+<!-- <h3> -->
+  <!-- pass variable | pipe -->
+  <!-- {{people | json}} -->
+  <!-- {{currentDate | date: 'fullDate' | uppercase}}
+</h3> -->
+
+<!-- <h3>
+  {{ 7845678153 | fileSize: 'GB'}}
+</h3> -->
