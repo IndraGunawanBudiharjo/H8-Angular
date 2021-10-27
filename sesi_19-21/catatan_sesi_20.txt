@@ -1,0 +1,3 @@
+() -> lempar data dari dom ke component
+[] -> lempar data dari component ke dom
+[()] -> two way binding
