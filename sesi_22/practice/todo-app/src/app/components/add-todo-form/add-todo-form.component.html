@@ -1,17 +1,24 @@
-<form>
+<form [formGroup]="todoForm" (ngSubmit)="onSubmitForm()">
     <div class="input-group mb-3">
         <input 
+            (change)="handleIsSubmittedState()"
             type="text"
-            name="inputTodo"
             placeholder="Enter todo..."
-            class="form-control"
             [(ngModel)]="inputTodo"
+            id="inputNewItem"
+            name="inputNewItem"
+            formControlName="inputNewItem"
         />
         <input 
             type="submit"
             name="Add Todo"
             class="btn btn-primary"
-            (click)="addTodo()"
         />
+    </div>
+    <div *ngIf="inputNewItem && inputNewItem?.errors?.required && isSubmitted == true" class="alert alert-danger">
+        Task can't be empty
+    </div>
+    <div *ngIf="inputNewItem && inputNewItem?.errors?.minlength && isSubmitted == true" class="alert alert-danger">
+        Task must have at least {{inputNewItem?.errors?.minlength?.requiredLength}} minimum length!
     </div>
 </form>
