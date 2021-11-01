@@ -1,7 +1,7 @@
 <form [formGroup]="todoForm" (ngSubmit)="onSubmitForm()">
     <div class="input-group mb-3">
         <input 
-            (change)="handleIsSubmittedState()"
+            (change)="toggleIsSubmitted()"
             type="text"
             placeholder="Enter todo..."
             [(ngModel)]="inputTodo"
@@ -13,6 +13,7 @@
             type="submit"
             name="Add Todo"
             class="btn btn-primary"
+            [disabled]="inputNewItem?.errors?.minlength"
         />
     </div>
     <div *ngIf="inputNewItem && inputNewItem?.errors?.required && isSubmitted == true" class="alert alert-danger">

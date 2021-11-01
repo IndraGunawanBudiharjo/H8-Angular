@@ -1,6 +1,38 @@
-<h1>Test Angular</h1>
+<!-- <h1>Test Angular</h1> -->
 
-<app-header [message]="parentMessage"></app-header>
+<app-login-reactive-form class="component"></app-login-reactive-form>
+
+
+<!-- Template driven form -->
+<!-- <form (ngSubmit)="handleFormOnSubmit(taskForm)" #taskForm="ngForm">
+  <div class="form-group">
+    <label for="name">Task Name </label>
+    <input type="text" name="name" id="name" ngModel required/>
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select class="form-control" type="text" name="category" id="category" ngModel>
+      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+    </select>
+  </div>
+  <input type="submit" value="submit"/>
+
+</form>
+<ul>
+  <li *ngFor="let task of tasks">
+    {{task.category}} -> {{task.task}} -> {{task.status}}
+  </li>
+</ul> -->
+
+
+
+<!-- No encapsulation -->
+<!-- <div class="no-encapsulation">No encapsulation di component utama</div> -->
+<!-- <app-no-encapsulation></app-no-encapsulation>
+<app-emulated-encapsulation></app-emulated-encapsulation>
+<app-shadow-dom-encapsulation></app-shadow-dom-encapsulation> -->
+
+<!-- <app-header [message]="parentMessage"></app-header>
 <app-button (counterEvent)="counterIncrement()"[name]="parentIncrease"></app-button>
 <app-button (counterEvent)="counterDecrement()"[name]="parentDecrease"></app-button>
 <app-button (counterEvent)="resetCount()"[name]="parentReset"></app-button>
@@ -19,7 +51,7 @@
   <label>Masukkan Pesan: <input [(ngModel)]="message"></label>
 </div>
 
-<app-paragraph [message]="'You can\'t see me'" [isShown]="false"></app-paragraph>
+<app-paragraph [message]="'You can\'t see me'" [isShown]="false"></app-paragraph> --> 
 
 <!-- <div *ngFor="let message of messages">
   <app-paragraph [message]="message"></app-paragraph>
@@ -31,6 +63,7 @@
       <td>{{message}}</td>
   </tr>
 </table> -->
+
 <!-- 
 <table border="1">
   <ng-template ngFor let-message [ngForOf]="messages" let-i="index">
@@ -60,8 +93,9 @@
   <!-- pass variable | pipe -->
   <!-- {{people | json}} -->
   <!-- {{currentDate | date: 'fullDate' | uppercase}}
-</h3> -->
+</h3> 
 
-<!-- <h3>
+<h3>
   {{ 7845678153 | fileSize: 'GB'}}
 </h3> -->
+

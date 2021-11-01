@@ -4,15 +4,15 @@
 
 <ol *ngFor="let todo of todos let i = index;" class="list-group">
     <li *ngIf="!todo.editable" class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-3 me-auto">
+        <div class="ms-1 me-auto">
             <div class="content {{(todo.completed ? 'done' : '')}}">
                 {{i+1}}. {{todo.content}}
             </div>
         </div>
-        <button class="btn {{(todo.completed ? 'btn-light' : 'btn-warning')}} btn-sm completed mx-0.5" (click)="toggleDone(i)">
+        <button class="btn {{(todo.completed ? 'btn-light' : 'btn-warning')}} btn-sm completed" (click)="toggleDone(i)">
             <i class="bi bi-check-circle"></i>
         </button>
-        <button class="btn btn-info btn-sm mx-1" (click)="editTodo(i)">
+        <button class="btn btn-info btn-sm" (click)="editTodo(i)">
             <i class="bi bi-pencil-square"></i> 
         </button>
         <button class="btn btn-danger btn-sm" (click)="deleteTodo(i)">
@@ -21,7 +21,7 @@
     </li>
 
     <li *ngIf="todo.editable" class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-3 me-auto">
+        <div class="ms-1 me-auto">
             <div class="content">
                 <input type="text" [(ngModel)]="todo.content">
             </div>

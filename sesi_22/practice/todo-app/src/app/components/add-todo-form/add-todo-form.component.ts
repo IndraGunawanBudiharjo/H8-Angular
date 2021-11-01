@@ -16,8 +16,10 @@ export class AddTodoFormComponent implements OnInit {
 
   todoForm = new FormGroup({
     inputNewItem: new FormControl('', 
-        [Validators.required,
-        Validators.minLength(10)])
+      [
+        Validators.required,
+        Validators.minLength(10)
+      ])
   });
 
   get inputNewItem(){
@@ -32,8 +34,7 @@ export class AddTodoFormComponent implements OnInit {
     }
   }
 
-
-  handleIsSubmittedState(){
+  toggleIsSubmitted(){
     if (this.isSubmitted == true)
       this.isSubmitted = false;
   };
